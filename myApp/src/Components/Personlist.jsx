@@ -46,8 +46,18 @@ function PersonList({ data }) {
             const style = positionStyle[item.position] || positionStyle["Sales"]
             return (
               <article key={item.id} className="app-card member-card">
-                <div className="member-avatar">
-                  <img src={style.image} alt={item.position} />
+                <div className="member-photo">
+                  <div className="member-photo-ring">
+                    {item.image ? (
+                      <img src={item.image} alt={`รูปโปรไฟล์ ${item.name}`} />
+                    ) : (
+                      // No photo yet: show the first letter of the name (without the title)
+                      <span className="member-initial">{item.name.replace(/^(นาย|นางสาว|นาง)/, '').charAt(0)}</span>
+                    )}
+                  </div>
+                  <span className="member-photo-icon" title={item.position}>
+                    <img src={style.image} alt="" />
+                  </span>
                 </div>
                 <div className="member-main">
                   <h3 className="member-name">{item.name}</h3>

@@ -90,18 +90,58 @@
 .member-card:nth-child(3) { animation-delay: 0.12s; }
 .member-card:nth-child(4) { animation-delay: 0.18s; }
 
-.member-avatar {
-  width: 64px;
-  height: 64px;
+/* Profile photo: gradient ring + small position icon in the corner */
+.member-photo {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+}
+
+.member-photo-ring {
+  width: 100%;
+  height: 100%;
+  padding: 3px;
+  border-radius: 50%;
+  background: var(--gradient);
+  box-shadow: var(--shadow-primary);
+}
+
+.member-photo-ring img,
+.member-initial {
+  width: 100%;
+  height: 100%;
   display: grid;
   place-items: center;
-  border-radius: 20px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--surface);
   background: var(--avatar-bg);
 }
 
-.member-avatar img {
-  width: 42px;
-  height: 42px;
+.member-initial {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.member-photo-icon {
+  position: absolute;
+  right: -2px;
+  bottom: -2px;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  background: var(--surface);
+  border: 2px solid var(--surface);
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(30, 20, 51, 0.15);
+}
+
+.member-photo-icon img {
+  width: 20px;
+  height: 20px;
 }
 
 .member-main {
@@ -191,10 +231,26 @@
     box-shadow: 0 20px 40px rgba(124, 58, 237, 0.12);
   }
 
-  .member-avatar {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
+  .member-photo {
+    width: 112px;
+    height: 112px;
+    margin-bottom: 4px;
+  }
+
+  .member-photo-ring {
+    padding: 4px;
+  }
+
+  .member-photo-icon {
+    right: 2px;
+    bottom: 2px;
+    width: 34px;
+    height: 34px;
+  }
+
+  .member-photo-icon img {
+    width: 24px;
+    height: 24px;
   }
 
   .member-main {
