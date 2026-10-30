@@ -28,7 +28,7 @@ function Login({ onLogin }) {
   }
 
   return (
-    <form className="card login" onSubmit={handleSubmit} noValidate>
+    <form className="app-card login" onSubmit={handleSubmit} noValidate>
       <div className="login-head">
         <h2>เข้าสู่ระบบ</h2>
         <p>ยินดีต้อนรับกลับมา กรุณาเข้าสู่ระบบเพื่อใช้งาน</p>
@@ -75,7 +75,7 @@ function Login({ onLogin }) {
 
       {error && <p className="login-error">{error}</p>}
 
-      <button type="submit" className="btn btn-primary" disabled={loading}>
+      <button type="submit" className="app-btn app-btn-primary" disabled={loading}>
         {loading ? 'กำลังเข้าสู่ระบบ...' : 'เข้าสู่ระบบ'}
       </button>
     </form>

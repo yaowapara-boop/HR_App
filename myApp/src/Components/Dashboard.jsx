@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import employees from '../data/employees'
 import './Dashboard.css'
 
-function Dashboard() {
+function Dashboard({ employees }) {
   const total = employees.length
   const ages = employees.map((e) => e.age)
   const avgAge = (ages.reduce((sum, age) => sum + age, 0) / total).toFixed(1)
@@ -47,7 +46,7 @@ function Dashboard() {
 
       <div className="stat-grid">
         {stats.map((item) => (
-          <div key={item.label} className="card stat-tile">
+          <div key={item.label} className="app-card stat-tile">
             <span className="stat-icon">{item.icon}</span>
             <span className="stat-label">{item.label}</span>
             <strong className="stat-value">
@@ -58,7 +57,7 @@ function Dashboard() {
       </div>
 
       <div className="dashboard-charts">
-        <div className="card chart-card">
+        <div className="app-card chart-card">
           <h4 className="chart-title">พนักงานแยกตามแผนก</h4>
           <ul className="bar-list">
             {departments.map((d) => (
@@ -73,7 +72,7 @@ function Dashboard() {
           </ul>
         </div>
 
-        <div className="card chart-card">
+        <div className="app-card chart-card">
           <h4 className="chart-title">พนักงานแยกตามช่วงอายุ</h4>
           <div className="column-chart">
             {ageGroups.map((g) => (

@@ -8,7 +8,7 @@ const shortcuts = [
   { id: 'about', icon: '🏢', title: 'เกี่ยวกับเรา', desc: 'รู้จัก YaowapaDev' }
 ]
 
-function Home({ user, onLogin, onLogout, onNavigate }) {
+function Home({ data, user, onLogin, onLogout, onNavigate }) {
   return (
     <div className="page">
       <Header
@@ -19,7 +19,7 @@ function Home({ user, onLogin, onLogout, onNavigate }) {
       <main className="page-body">
         {user ? (
           <>
-            <div className="card welcome-card">
+            <div className="app-card welcome-card">
               <div className="welcome-avatar">{user.name.charAt(0).toUpperCase()}</div>
               <div>
                 <h2 className="welcome-name">{user.name}</h2>
@@ -27,12 +27,12 @@ function Home({ user, onLogin, onLogout, onNavigate }) {
               </div>
             </div>
 
-            <Dashboard />
+            <Dashboard employees={data} />
 
             <h3 className="section-title">เมนูลัด</h3>
             <div className="shortcut-grid">
               {shortcuts.map((item) => (
-                <button key={item.id} className="card shortcut" onClick={() => onNavigate(item.id)}>
+                <button key={item.id} className="app-card shortcut" onClick={() => onNavigate(item.id)}>
                   <span className="shortcut-icon">{item.icon}</span>
                   <strong>{item.title}</strong>
                   <span className="shortcut-desc">{item.desc}</span>
@@ -40,7 +40,7 @@ function Home({ user, onLogin, onLogout, onNavigate }) {
               ))}
             </div>
 
-            <button className="btn btn-ghost" onClick={onLogout}>ออกจากระบบ</button>
+            <button className="app-btn app-btn-ghost" onClick={onLogout}>ออกจากระบบ</button>
           </>
         ) : (
           <Login onLogin={onLogin} />

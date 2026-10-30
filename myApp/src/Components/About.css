@@ -1,58 +1,15 @@
-.about-company-head {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.about-company-head img {
+/* Layout and colors come from Bootstrap; only the custom touches live here */
+.about-logo {
   width: 56px;
   height: 56px;
   border-radius: 16px;
   box-shadow: var(--shadow-primary);
 }
 
-.about-company-head h2 {
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.about-company-head span {
-  font-size: 13px;
-  color: var(--muted);
-}
-
-.about-desc {
-  margin-top: 16px;
-  font-size: 15px;
+.about-tab-text {
   line-height: 1.7;
   color: var(--muted);
-}
-
-.about-values {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  margin-top: 20px;
-}
-
-.about-value {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 12px 4px;
-  background: var(--soft);
-  border-radius: var(--radius-sm);
-}
-
-.about-value strong {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--primary);
-}
-
-.about-value span {
-  font-size: 12px;
-  color: var(--muted);
+  animation: page-in 0.3s ease-out both;
 }
 
 .about-app-banner {
@@ -63,40 +20,34 @@
   box-shadow: var(--shadow-primary);
 }
 
+.about-app-banner p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ede9fe;
+}
+
 .about-app-tag {
-  display: inline-block;
-  padding: 4px 12px;
-  font-size: 12px;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
   background: rgba(255, 255, 255, 0.18);
-  border-radius: 999px;
 }
 
-.about-app-banner h2 {
-  margin-top: 12px;
-  font-size: 22px;
-  font-weight: 700;
-}
-
-.about-app-banner p {
-  margin-top: 6px;
-  font-size: 14px;
-  line-height: 1.6;
-  color: #dbeafe;
-}
-
-.about-features {
-  display: grid;
-  gap: 12px;
+.about-tech {
+  padding: 6px 12px;
+  font-weight: 500;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .about-feature {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  padding: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.about-feature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(124, 58, 237, 0.12) !important;
 }
 
 .about-feature-icon {
@@ -110,23 +61,11 @@
   border-radius: 14px;
 }
 
-.about-feature h3 {
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.about-feature p {
-  margin-top: 2px;
-  font-size: 14px;
-  color: var(--muted);
+.about-bs .accordion-button:not(.collapsed) {
+  box-shadow: none;
 }
 
 @media (min-width: 768px) {
-  .about-features {
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-
   .about-app-banner {
     padding: 32px;
   }

@@ -1,0 +1,83 @@
+/* Map Bootstrap's variables onto the app's own tokens (index.css),
+   so Bootstrap components follow the purple theme and Light/Dark toggle */
+:root,
+[data-bs-theme] {
+  --bs-body-font-family: var(--sans);
+  --bs-body-bg: var(--bg);
+  --bs-body-color: var(--text);
+  --bs-emphasis-color: var(--text);
+  --bs-secondary-color: var(--muted);
+  --bs-secondary-bg: var(--surface);
+  --bs-tertiary-bg: var(--soft);
+  --bs-border-color: var(--line);
+  --bs-border-radius: var(--radius-sm);
+  --bs-border-radius-lg: var(--radius);
+
+  --bs-primary: #7c3aed;
+  --bs-primary-rgb: 124, 58, 237;
+  --bs-primary-bg-subtle: var(--soft);
+  --bs-primary-border-subtle: #ddd6fe;
+  --bs-primary-text-emphasis: var(--primary);
+  --bs-link-color: var(--primary);
+  --bs-link-color-rgb: 124, 58, 237;
+  --bs-link-hover-color: var(--primary-dark);
+  --bs-focus-ring-color: rgba(124, 58, 237, 0.25);
+}
+
+[data-bs-theme="dark"] {
+  --bs-primary-border-subtle: #4c1d95;
+  --bs-link-hover-color: var(--primary-light);
+}
+
+body {
+  font-family: var(--sans);
+}
+
+.card {
+  --bs-card-bg: var(--surface);
+  --bs-card-border-color: var(--line);
+  --bs-card-border-radius: var(--radius);
+  --bs-card-inner-border-radius: calc(var(--radius) - 1px);
+  --bs-card-cap-bg: transparent;
+}
+
+.list-group {
+  --bs-list-group-bg: var(--surface);
+  --bs-list-group-border-color: var(--line);
+  --bs-list-group-border-radius: var(--radius);
+}
+
+.accordion {
+  --bs-accordion-bg: var(--surface);
+  --bs-accordion-border-color: var(--line);
+  --bs-accordion-border-radius: var(--radius);
+  --bs-accordion-inner-border-radius: calc(var(--radius) - 1px);
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 4px var(--bs-focus-ring-color);
+  --bs-accordion-active-bg: var(--soft);
+  --bs-accordion-active-color: var(--primary);
+}
+
+.nav-pills {
+  --bs-nav-pills-border-radius: 999px;
+  --bs-nav-pills-link-active-bg: var(--primary);
+  --bs-nav-link-color: var(--muted);
+  --bs-nav-link-hover-color: var(--primary);
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--primary);
+  --bs-btn-border-color: var(--primary);
+  --bs-btn-hover-bg: #6d28d9;
+  --bs-btn-hover-border-color: #6d28d9;
+  --bs-btn-active-bg: #5b21b6;
+  --bs-btn-active-border-color: #5b21b6;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--primary);
+  --bs-btn-border-color: var(--primary);
+  --bs-btn-hover-bg: var(--primary);
+  --bs-btn-hover-border-color: var(--primary);
+  --bs-btn-active-bg: var(--primary);
+  --bs-btn-active-border-color: var(--primary);
+}

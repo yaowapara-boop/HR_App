@@ -10,6 +10,7 @@ function ThemeToggle() {
   const toggle = () => {
     const next = theme === 'dark' ? 'light' : 'dark'
     document.documentElement.dataset.theme = next
+    document.documentElement.dataset.bsTheme = next // Bootstrap's own dark mode
     try {
       localStorage.setItem('theme', next)
     } catch {
