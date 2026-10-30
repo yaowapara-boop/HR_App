@@ -1,0 +1,76 @@
+.welcome-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.welcome-avatar {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--gradient);
+  border-radius: 18px;
+  box-shadow: var(--shadow-primary);
+}
+
+.welcome-name {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.welcome-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.welcome-status::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.shortcut-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.shortcut {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.shortcut:active {
+  transform: scale(0.97);
+}
+
+.shortcut-icon {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 8px;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  background: var(--soft);
+  border-radius: 14px;
+}
+
+.shortcut-desc {
+  font-size: 13px;
+  color: var(--muted);
+}

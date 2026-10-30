@@ -1,0 +1,13 @@
+{
+  "name": "YaowapaDev HR Management",
+  "short_name": "YaowapaDev HR",
+  "description": "HR Management Application by YaowapaDev",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f1f5f9",
+  "theme_color": "#1e3a8a",
+  "icons": [
+    { "src": "/logo.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

@@ -1,0 +1,225 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dashboard-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.system-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+
+.system-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #16a34a;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2);
+}
+
+/* KPI tiles */
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.stat-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 16px;
+}
+
+.stat-icon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 8px;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  background: var(--soft);
+  border-radius: 12px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.stat-value {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.stat-value small {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+/* Charts */
+.dashboard-charts {
+  display: grid;
+  gap: 12px;
+}
+
+.chart-title {
+  margin: 0 0 16px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.bar-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.bar-row {
+  display: grid;
+  grid-template-columns: 76px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.bar-label {
+  color: var(--text);
+}
+
+.bar-track {
+  height: 10px;
+  background: var(--soft);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  display: block;
+  height: 100%;
+  background: var(--primary);
+  border-radius: 0 4px 4px 0;
+  transform-origin: left;
+  animation: bar-grow 0.8s ease-out both;
+  transition: opacity 0.2s;
+}
+
+.bar-value {
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.column-chart {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  height: 160px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.column-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.column-track {
+  flex: 1;
+  width: 28px;
+  display: flex;
+  align-items: flex-end;
+  background: var(--soft);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.column-fill {
+  display: block;
+  width: 100%;
+  background: var(--primary);
+  border-radius: 4px 4px 0 0;
+  transform-origin: bottom;
+  animation: column-grow 0.8s ease-out both;
+  transition: opacity 0.2s;
+}
+
+.column-label {
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* Hover: dim the others so the hovered mark stands out */
+.bar-list:hover .bar-fill,
+.column-chart:hover .column-fill {
+  opacity: 0.45;
+}
+
+.bar-row:hover .bar-fill,
+.column:hover .column-fill {
+  opacity: 1;
+}
+
+.dashboard-updated {
+  margin: 0 4px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+@keyframes bar-grow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes column-grow {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+@media (min-width: 768px) {
+  .stat-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .dashboard-charts {
+    grid-template-columns: 1.4fr 1fr;
+    gap: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar-fill,
+  .column-fill {
+    animation: none;
+  }
+}

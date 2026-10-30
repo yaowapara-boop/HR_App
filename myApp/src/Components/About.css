@@ -1,0 +1,133 @@
+.about-company-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.about-company-head img {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-primary);
+}
+
+.about-company-head h2 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.about-company-head span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.about-desc {
+  margin-top: 16px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.about-values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.about-value {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 4px;
+  background: var(--soft);
+  border-radius: var(--radius-sm);
+}
+
+.about-value strong {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.about-value span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.about-app-banner {
+  padding: 24px 20px;
+  color: #fff;
+  background: var(--gradient);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-primary);
+}
+
+.about-app-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+}
+
+.about-app-banner h2 {
+  margin-top: 12px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.about-app-banner p {
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #dbeafe;
+}
+
+.about-features {
+  display: grid;
+  gap: 12px;
+}
+
+.about-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px;
+}
+
+.about-feature-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  background: var(--soft);
+  border-radius: 14px;
+}
+
+.about-feature h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.about-feature p {
+  margin-top: 2px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+@media (min-width: 768px) {
+  .about-features {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .about-app-banner {
+    padding: 32px;
+  }
+}
